@@ -12,42 +12,71 @@ namespace LibraryMSAPI.Controllers
     public class BooksController : Controller
     {
         public LibraryDbContext DbContext { get; }
+        public int booksAmount { get; set; }
         public BooksController(LibraryDbContext libraryDbContext)
         {
             DbContext = libraryDbContext;
+            booksAmount = DbContext.Books.Count();
         }
         // GET api/values
-        [HttpGet]
-        public async Task<string> Get()
+        [HttpGet("name/{name}")]
+        public async Task<Book[]> GetbyName(string name)
         {
             var books = DbContext.Books;
-            var data = await (from manager in DbContext.Managers select manager.password).ToArrayAsync();
-            return data[0];
+            var data = await (from book in DbContext.Books where book.name.Equals(name)select book).ToArrayAsync();
+            return data;
+        }
+        [HttpGet("press/{press}")]
+        public async Task<Book[]> GetbyPress(string press)
+        {
+            var books = DbContext.Books;
+            var data = await (from book in DbContext.Books where book.press.Equals(press) select book).ToArrayAsync();
+            return data;
+        }
+        [HttpGet("author/{author}")]
+        public async Task<Book[]> GetbyAuthor(string author)
+        {
+            var books = DbContext.Books;
+            var data = await (from book in DbContext.Books where book.author.Equals(author) select book).ToArrayAsync();
+            return data;
+        }
+        [HttpGet("year/{fromy}/{toy}")]
+        public async Task<Book[]> GetbyYear(int fromy,int toy)
+        {
+            var books = DbContext.Books;
+            var data = await (from book in DbContext.Books where book.year<=toy&&book.year>=fromy select book).ToArrayAsync();
+            return data;
+        }
+        [HttpGet("stock/{stock}")]
+        public async Task<Book[]> GetbyName(int stock)
+        {
+            var books = DbContext.Books;
+            var data = await (from book in DbContext.Books where book.stock>=stock select book).ToArrayAsync();
+            return data;
+        }
+        [HttpGet("type/{type}")]
+        public async Task<Book[]> GetbyType(int type)
+        {
+            var books = DbContext.Books;
+            var data = await (from book in DbContext.Books where book.type.Equals(type) select book).ToArrayAsync();
+            return data;
+        }
+        [HttpGet("price/{fromp}/{top}")]
+        public async Task<Book[]> GetbyPrice(double fromp,double top)
+        {
+            var books = DbContext.Books;
+            var data = await (from book in DbContext.Books where book.price>=fromp&&book.price<=top select book).ToArrayAsync();
+            return data;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
+        [HttpPost("add")]
+        public async Task<IActionResult> AddBook([FromBody] Book book)
         {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            var books = DbContext.Books;
+            await books.AddAsync(book);
+            await DbContext.SaveChangesAsync();
+            return Ok();
         }
     }
 }

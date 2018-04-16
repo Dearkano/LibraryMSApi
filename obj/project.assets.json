@@ -2976,6 +2976,18 @@
           }
         }
       },
+      "Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions.dll": {}
+        }
+      },
       "SQLitePCLRaw.bundle_green/1.1.7": {
         "type": "package",
         "dependencies": {
@@ -7838,6 +7850,19 @@
         "version.txt"
       ]
     },
+    "Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions/1.0.0": {
+      "sha512": "FjM11jXqQ/9PKfirvANDkUb8ypIOw43u+MXufRqGAZOrUTllXvCER9BuvIUaBPTgm5avB+KoUudPrRYwWh5iTQ==",
+      "type": "package",
+      "path": "sakura.aspnetcore.mvc.actionresultexceptionextensions/1.0.0",
+      "files": [
+        "lib/net451/Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions.dll",
+        "lib/net451/Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions.xml",
+        "lib/netstandard1.6/Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions.dll",
+        "lib/netstandard1.6/Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions.xml",
+        "sakura.aspnetcore.mvc.actionresultexceptionextensions.1.0.0.nupkg.sha512",
+        "sakura.aspnetcore.mvc.actionresultexceptionextensions.nuspec"
+      ]
+    },
     "SQLitePCLRaw.bundle_green/1.1.7": {
       "sha512": "Kw+n4CUhQ8S4YAPmpRUldO8S7c4LU7HHukJF0v5Sfggf8Ia9YVdIh0dYkMvKvS+DTX+OBORSMqPM0CGfAzFtVA==",
       "type": "package",
@@ -12532,7 +12557,8 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.6",
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12587,6 +12613,10 @@
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true
+          },
+          "Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           }
         },
         "imports": [

@@ -28,5 +28,9 @@ namespace LibraryMSAPI.Data
 
         [Column("total")]
         public int total { get; set; }
+        [Column("type")]
+        public string type { get; set; }
+        [Column("price")]
+        public double price { get; set; }
     }
 }
