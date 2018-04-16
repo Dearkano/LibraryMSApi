@@ -8,12 +8,22 @@ namespace LibraryMSAPI.Data
     [Table("Record")]
     public class Record
     {
+        public Record(int bid,int cid,int mid,DateTime bor, DateTime ret)
+        {
+            bookId = bid;
+            cardId = cid;
+            borrow_date = bor;
+            return_date = ret;
+            manager_id = mid;
+        }
         [Column("Id")]
         public int Id { get; set; }
 
         [Column("cardId")]
         public int cardId { get; set; }
 
+        [Column("bookId")]
+        public int bookId { get; set; }
         [Column("borrow_date")]
         public DateTime borrow_date { get; set; }
 
