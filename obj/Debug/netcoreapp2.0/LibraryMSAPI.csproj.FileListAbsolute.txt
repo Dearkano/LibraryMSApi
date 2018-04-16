@@ -1,0 +1,11 @@
+C:\Users\VayneTian\source\repos\LibraryMSAPI\LibraryMSAPI\bin\Debug\netcoreapp2.0\LibraryMSAPI.deps.json
+C:\Users\VayneTian\source\repos\LibraryMSAPI\LibraryMSAPI\bin\Debug\netcoreapp2.0\LibraryMSAPI.runtimeconfig.json
+C:\Users\VayneTian\source\repos\LibraryMSAPI\LibraryMSAPI\bin\Debug\netcoreapp2.0\LibraryMSAPI.runtimeconfig.dev.json
+C:\Users\VayneTian\source\repos\LibraryMSAPI\LibraryMSAPI\bin\Debug\netcoreapp2.0\LibraryMSAPI.dll
+C:\Users\VayneTian\source\repos\LibraryMSAPI\LibraryMSAPI\bin\Debug\netcoreapp2.0\LibraryMSAPI.pdb
+C:\Users\VayneTian\source\repos\LibraryMSAPI\LibraryMSAPI\obj\Debug\netcoreapp2.0\LibraryMSAPI.csproj.CoreCompileInputs.cache
+C:\Users\VayneTian\source\repos\LibraryMSAPI\LibraryMSAPI\obj\Debug\netcoreapp2.0\LibraryMSAPI.AssemblyInfoInputs.cache
+C:\Users\VayneTian\source\repos\LibraryMSAPI\LibraryMSAPI\obj\Debug\netcoreapp2.0\LibraryMSAPI.AssemblyInfo.cs
+C:\Users\VayneTian\source\repos\LibraryMSAPI\LibraryMSAPI\obj\Debug\netcoreapp2.0\LibraryMSAPI.dll
+C:\Users\VayneTian\source\repos\LibraryMSAPI\LibraryMSAPI\obj\Debug\netcoreapp2.0\LibraryMSAPI.pdb
+C:\Users\VayneTian\source\repos\LibraryMSAPI\LibraryMSAPI\obj\Debug\netcoreapp2.0\LibraryMSAPI.csprojResolveAssemblyReference.cache
