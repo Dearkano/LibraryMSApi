@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "86a062ac6f695f109b50d8949c1e6b958f65bfbe"
+    "signature": "e68504600e52645fbaf86bfffab0daef376f1966"
   },
   "compilationOptions": {
     "defines": [
@@ -24,7 +24,8 @@
       "LibraryMSAPI/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.6",
-          "Microsoft.NETCore.App": "2.0.0"
+          "Microsoft.NETCore.App": "2.0.0",
+          "Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions": "1.0.0"
         },
         "runtime": {
           "LibraryMSAPI.dll": {}
@@ -2546,6 +2547,17 @@
             "rid": "win-x86",
             "assetType": "native"
           }
+        }
+      },
+      "Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions.dll": {}
         }
       },
       "SQLitePCLRaw.bundle_green/1.1.7": {
@@ -5279,6 +5291,13 @@
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "Sakura.AspNetCore.Mvc.ActionResultExceptionExtensions/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FjM11jXqQ/9PKfirvANDkUb8ypIOw43u+MXufRqGAZOrUTllXvCER9BuvIUaBPTgm5avB+KoUudPrRYwWh5iTQ==",
+      "path": "sakura.aspnetcore.mvc.actionresultexceptionextensions/1.0.0",
+      "hashPath": "sakura.aspnetcore.mvc.actionresultexceptionextensions.1.0.0.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_green/1.1.7": {
       "type": "package",

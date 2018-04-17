@@ -19,5 +19,9 @@ namespace LibraryMSAPI.Data
 
         [Column("type")]
         public string type { get; set; }
+
+        [Column("password")]
+        public string password { get; set; }
+
     }
 }

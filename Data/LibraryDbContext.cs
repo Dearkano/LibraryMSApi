@@ -18,10 +18,10 @@ namespace LibraryMSAPI.Data
 
         public  DbSet<Book> Books { get; set; }
 
-        public virtual DbSet<Card> Cards { get; set; }
+        public  DbSet<Card> Cards { get; set; }
 
-        public virtual DbSet<Manager> Managers { get; set; }
+        public  DbSet<Record> Records { get; set; }
 
-        public virtual DbSet<Record> Records { get; set; }
+        public  DbSet<Authorization> Authorizations { get; set; }
     }
 }

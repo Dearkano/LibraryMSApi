@@ -11,7 +11,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LibraryMSAPI.Controllers
 {
-    public class ManagerInfo
+    public class UserInfo
     {
         [Required]
         public string name { get; set; }
@@ -28,20 +28,21 @@ namespace LibraryMSAPI.Controllers
         }
         // login  name&password
         [HttpPost]
-        public async Task<string> Post([FromBody]ManagerInfo managerInfo)
+        public async Task<string> Post([FromBody]UserInfo userInfo)
         {
-            var name = managerInfo.name;
-            var password = managerInfo.password;
-            Console.WriteLine(name);
-            Console.WriteLine("------------");
-            var _passwords = await (from manager in DbContext.Managers  select manager.password).ToArrayAsync();
-            if (_passwords.Length == 0) return "no this manager";
-            var _password = _passwords[0].Trim();
+            var name = userInfo.name;
+            var password = userInfo.password;
+            var thisUsers = await (from user in DbContext.Cards where user.name.Trim().Equals(name) select user).ToArrayAsync();
+            if (thisUsers.Length == 0) return "no this user";
+            var _password =thisUsers[0].password.Trim();
             if (password.Equals(_password))
             {
                 var result = "cc98" + name + "CC98" + password;
                 MD5 md5 = new MD5CryptoServiceProvider();
                 var output = BitConverter.ToString((md5.ComputeHash(Encoding.UTF8.GetBytes(result)))).Replace("-", "");
+                var newA = new Data.Authorization(name, output);
+                DbContext.Authorizations.Add(newA);
+                await DbContext.SaveChangesAsync();
                 return output;
             }
             else
@@ -50,11 +51,6 @@ namespace LibraryMSAPI.Controllers
             }
           
         }
-        [HttpPost("{name}")]
-        public async Task<string> Get(string name,[FromBody] string password)
-        {
-
-            return name+password;
-        }
+   
     }
 }
