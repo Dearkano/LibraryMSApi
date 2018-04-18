@@ -229,7 +229,6 @@ namespace LibraryMSAPI.Controllers
                     }
                 }
                 var book = new Book(strs[1], strs[3], strs[2], int.Parse(strs[4]),decimal.Parse( strs[5]),int.Parse( strs[6]),int.Parse( strs[7]), strs[8]);
-                var kk = 0;
                 DbContext.Books.Add(book);
             }
            

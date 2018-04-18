@@ -132,7 +132,7 @@ namespace LibraryMSAPI.Controllers
                 if(card.active==1) throw new ActionResultException(HttpStatusCode.BadRequest, "card already dead");
                 var cardId = card.Id;
                 var rec = await (from r in DbContext.Records where cardId== r.cardId && r.accept == 1 select r).ToArrayAsync();
-                if(rec.Length!=0) throw new ActionResultException(HttpStatusCode.BadRequest, "book not return");
+                if (rec.Length != 0) return BadRequest();
                 card.active = 1;
                 cards.Update(card);
                 await DbContext.SaveChangesAsync();
