@@ -8,6 +8,18 @@ namespace LibraryMSAPI.Data
     [Table("Book")]
     public class Book
     {
+        public Book() { }
+        public Book(string _name,string _author,string _press,int _year,decimal _price,int _stock,int _total,string _type)
+        {
+            name = _name;
+            author = _author;
+            press = _press;
+            year = _year;
+            price = _price;
+            stock = _stock;
+            total = _total;
+            type = _type;
+        }
         [Column("Id")]
         public int Id { get; set; }
 

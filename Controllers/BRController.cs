@@ -49,14 +49,14 @@ namespace LibraryMSAPI.Controllers
             if (data.Length == 0) throw new ActionResultException(HttpStatusCode.BadRequest, "no book");
             var thisbook = data[0];
             if (thisbook.stock == 0) throw new ActionResultException(HttpStatusCode.BadRequest, "no stock");
-            var rec = await (from n in DbContext.Records where card.Id == n.cardId && bid == n.bookId select n).ToArrayAsync();
+            var rec = await (from n in DbContext.Records where card.Id == n.cardId && bid == n.bookId&&n.accept==1 select n).ToArrayAsync();
             if(rec.Length!=0) throw new ActionResultException(HttpStatusCode.BadRequest, "has borrow");
             thisbook.stock--;
             books.Update(thisbook);
 
             var now = DateTime.Now;
             var returnDate = now.AddDays(15);
-            Record newRecord = new Record(bid, cid, card.Id, now, returnDate,2);
+            Record newRecord = new Record(bid, cid, now, returnDate,2);
             records.Add(newRecord);
 
             await DbContext.SaveChangesAsync();

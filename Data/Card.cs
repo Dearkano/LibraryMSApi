@@ -23,5 +23,8 @@ namespace LibraryMSAPI.Data
         [Column("password")]
         public string password { get; set; }
 
+        [Column("active")]
+        public int active { get; set; }
+
     }
 }

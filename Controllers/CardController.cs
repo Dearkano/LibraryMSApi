@@ -121,15 +121,20 @@ namespace LibraryMSAPI.Controllers
            
         }
 
-        [HttpPost("delete/{id}")]
-        public async Task<IActionResult> DeleteCard(int id)
+        [HttpGet("remove/{name}")]
+        public async Task<IActionResult> DeleteCard(string name)
         {
             try
             {
                 var cards = DbContext.Cards;
-                var data = await (from i in cards where i.Id == id select i).ToArrayAsync();
+                var data = await (from i in cards where i.name == name select i).ToArrayAsync();
                 var card = data[0];
-                cards.Remove(card);
+                if(card.active==1) throw new ActionResultException(HttpStatusCode.BadRequest, "card already dead");
+                var cardId = card.Id;
+                var rec = await (from r in DbContext.Records where cardId== r.cardId && r.accept == 1 select r).ToArrayAsync();
+                if(rec.Length!=0) throw new ActionResultException(HttpStatusCode.BadRequest, "book not return");
+                card.active = 1;
+                cards.Update(card);
                 await DbContext.SaveChangesAsync();
                 return Ok();
             }

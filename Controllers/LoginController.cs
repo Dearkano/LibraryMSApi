@@ -34,6 +34,7 @@ namespace LibraryMSAPI.Controllers
             var password = userInfo.password;
             var thisUsers = await (from user in DbContext.Cards where user.name.Trim().Equals(name) select user).ToArrayAsync();
             if (thisUsers.Length == 0) return "no this user";
+            if (thisUsers[0].active == 1) return "already dead";
             var _password =thisUsers[0].password.Trim();
             if (password.Equals(_password))
             {
